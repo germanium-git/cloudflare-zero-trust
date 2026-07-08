@@ -1,0 +1,5 @@
+cloudflare_account_id = "your_account_id_here"
+
+# Better supplied via env var instead of this file, e.g.:
+#   export TF_VAR_google_idp_client_secret="..."
+# google_idp_client_secret = "your_google_oauth_client_secret"

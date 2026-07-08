@@ -1,0 +1,9 @@
+# Cloudflare credentials - never commit
+.env.cloudflare
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
