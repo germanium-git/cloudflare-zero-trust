@@ -3,3 +3,8 @@ cloudflare_account_id = "your_account_id_here"
 # Better supplied via env var instead of this file, e.g.:
 #   export TF_VAR_google_idp_client_secret="..."
 # google_idp_client_secret = "your_google_oauth_client_secret"
+
+# Public IPs/CIDRs allowed to skip Google login on the local_network Access policy.
+trusted_source_ips = [
+  "203.0.113.10/32", # example: home static IP
+]
