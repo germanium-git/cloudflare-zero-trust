@@ -21,6 +21,29 @@ resource "cloudflare_zero_trust_access_application" "motioneye" {
   ]
 }
 
+resource "cloudflare_zero_trust_access_application" "paperless" {
+  account_id                 = var.cloudflare_account_id
+  name                       = "paperless"
+  domain                     = "paperless.germanium.cz"
+  type                       = "self_hosted"
+  session_duration           = "24h"
+  app_launcher_visible       = true
+  auto_redirect_to_identity  = false
+  enable_binding_cookie      = false
+  http_only_cookie_attribute = false
+  options_preflight_bypass   = false
+
+  destinations = [{
+    type = "public"
+    uri  = "paperless.germanium.cz"
+  }]
+
+  policies = [
+    { id = cloudflare_zero_trust_access_policy.local_network.id, precedence = 1 },
+    { id = cloudflare_zero_trust_access_policy.gmx_gmail_emails.id, precedence = 2 },
+  ]
+}
+
 resource "cloudflare_zero_trust_access_application" "warp_login" {
   account_id                = var.cloudflare_account_id
   name                      = "Warp Login App"
