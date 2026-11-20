@@ -69,6 +69,7 @@ locals {
     grafana   = "grafana.germanium.cz"
     n8n       = "n8n.germanium.cz"
     paperless = "paperless.germanium.cz"
+    jupyter   = "jupyter.germanium.cz"
   }
 }
 
