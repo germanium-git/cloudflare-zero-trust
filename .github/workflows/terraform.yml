@@ -53,6 +53,7 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v3
         with:
+          terraform_version: "~1.15.0"
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: terraform fmt
@@ -126,6 +127,7 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v3
         with:
+          terraform_version: "~1.15.0"
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: terraform init
